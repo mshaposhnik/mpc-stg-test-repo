@@ -10,7 +10,7 @@ metadata:
       == "main"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: mpc-test
+    appstudio.openshift.io/application: mpc-test-2
     appstudio.openshift.io/component: mpc-stg-test-repo
     pipelines.appstudio.openshift.io/type: build
   name: mpc-stg-test-repo-on-push
@@ -22,7 +22,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads-stage/mshaposh-tenant/mpc-test/mpc-stg-test-repo:{{revision}}
+    value: quay.io/redhat-user-workloads-stage/mshaposh-tenant/mpc-test-2/mpc-stg-test-repo:{{revision}}
   - name: dockerfile
     value: Dockerfile
   pipelineSpec:
@@ -98,10 +98,8 @@ spec:
       name: build-args-file
       type: string
     - default:
-        - localhost
-        - linux/arm64
-        - linux/ppc64le
-        - linux/s390x
+      - linux/x86_64
+      - linux/arm64
       description: List of platforms to build the container images on. The available
         set of values is determined by the configuration of the multi-platform-controller.
       name: build-platforms
