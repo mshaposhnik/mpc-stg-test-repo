@@ -478,7 +478,8 @@ spec:
       optional: true
     - name: netrc
       optional: true
-  taskRunTemplate: {}
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-mpc-stg-test-repo
   workspaces:
   - name: git-auth
     secret:
