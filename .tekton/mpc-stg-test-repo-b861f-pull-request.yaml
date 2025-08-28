@@ -32,7 +32,7 @@ spec:
     - linux/x86_64
     - linux/s390x
   - name: dockerfile
-    value: .Dockerfile
+    value: Dockerfile
   pipelineSpec:
     description: |
       This pipeline is ideal for building multi-arch container images from a Containerfile while maintaining trust after pipeline customization.
